@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_riegos_riegos,riegos.riegos,model_riegos_riegos,base.group_user,1,1,1,1
+access_riegos_riegos,riegos.socio,model_riegos_socio,base.group_user,1,1,1,1
+access_riegos_riegos,riegos.valvula,model_riegos_valvula,base.group_user,1,1,1,1
+access_riegos_riegos,riegos.servicio,model_riegos_servicio,base.group_user,1,1,1,1

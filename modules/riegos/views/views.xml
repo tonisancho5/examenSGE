@@ -1,0 +1,103 @@
+<odoo>
+	<data>
+		<!-- explicit list view definition -->
+		<record model="ir.ui.view" id="riegos.valvulas_tree">
+			<field name="name">
+				valvulas
+			</field>
+			<field name="model">
+				riegos.valvula
+			</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="cabal" />
+					<field name="servicios" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="riegos.valvulas_form">
+			<field name="name">
+				valvulas
+			</field>
+			<field name="model">
+				riegos.valvula
+			</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="cabal" />
+							<field name="servicios" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="riegos.servicios_tree">
+			<field name="name">
+				servicios
+			</field>
+			<field name="model">
+				riegos.servicio
+			</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="reservas" widget="date" />
+					<field name="hora inicio" />
+					<field name="hora final" />
+					<field name="cabal" />
+					<field name="valvulas" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="riegos.servicios_form">
+			<field name="name">
+				servicios
+			</field>
+			<field name="model">
+				riegos.servicio
+			</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="reservas" widget="date" />
+							<field name="hora inicio" />
+							<field name="hora final" />
+							<field name="cabal" />
+							<field name="valvulas" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!-- actions opening views on models -->
+		<record model="ir.actions.act_window" id="riegos.action_valvulas_window">
+			<field name="name">
+				valvulas
+			</field>
+			<field name="res_model">
+				riegos.valvula
+			</field>
+			<field name="view_mode">
+				tree,form
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="riegos.action_servicios_window">
+			<field name="name">
+				servicios
+			</field>
+			<field name="res_model">
+				riegos.servicio
+			</field>
+			<field name="view_mode">
+				tree,form
+			</field>
+		</record>
+		<!-- menu categories -->
+		<menuitem name="Gestion de riegos" id="riegos.gestion_riegos" parent="riegos.menu_root" />
+		<!-- actions -->
+		<menuitem name="Valvulas" id="riegos.valvulas_list" parent="riegos.menu_1" action="riegos.action_valvulas_window" />
+		<menuitem name="Servicios" id="riegos.servicios_list" parent="riegos.menu_2" action="riegos.action_servicios_window" />
+	</data>
+</odoo>
